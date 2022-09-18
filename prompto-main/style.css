@@ -11,14 +11,10 @@
 
 body {
     margin: 0;
+    height: 400vh;
     background: url(bg.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-size: 100% 200%;
-}
-
-.page {
-    width: 100%;
+    background-size: 400vh auto;
 }
 
 .page, .bar, .container {
@@ -117,28 +113,6 @@ h1, .bar {
     border-top: 2px black solid;
 }
 
-.phrase {
-    position: relative;
-    width: 100%;
-}
-
-.phrase::after{
-    content: "";
-    position: absolute;
-}
-
-.phrase::after {
-    background-color: rgb(255, 255, 255, 0);
-    left: -10px;
-    top: 10px;
-    height: 14px;
-    width: 14px;
-    z-index: 4;
-    transform: rotate(-135deg);
-    border-right: 2px black solid;
-    border-top: 2px black solid;
-}
-
 .speak {
     position: relative;
     background: #000000;
@@ -165,75 +139,3 @@ h1, .bar {
     z-index: 0;
 }
 
-textarea {
-    font-size: medium;
-}
-
-#tmmText {
-    display: none;
-    width: 280px;
-    font-size: 1.7em;
-    align-self: center;
-}
-
-#tmmText:hover {
-    text-decoration: underline;
-}
-
-.header {
-    padding-top: 150px;
-    font-size: 2em;
-    align-self: center;
-    padding-bottom: 70px;
-}
-
-#category-spread {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.category-item {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding-bottom: 50px;
-}
-
-.category-item:hover {
-    filter: opacity(0.7) drop-shadow(0 0 0 blue);
-}
-
-.category-item img{
-    aspect-ratio : 1 / 1;
-    align-self: center;
-    width: 60%;
-}
-
-.category-item p {
-    margin: 0;
-    align-self: center;
-    font-family: TNR;
-    font-size: 1.7em;
-    padding: 10px;
-}
-
-#phrases-container {
-    padding: 0 10vw;
-    padding-right: 15vw;
-}
-
-#phrases {
-    
-    list-style: none;
-    width: 100%;
-    position: relative;
-    font-family: TNR;
-    background: rgb(255, 255, 255, 0);
-    border: 2px black solid;
-    resize: none;
-    padding: 10px;
-    border-radius: 10px;
-    z-index: 2;
-}
