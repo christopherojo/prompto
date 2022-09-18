@@ -16,3 +16,29 @@ function hideLabel() {
     for (let i = 0; i < items.length; i++)
         items[i].style.display="none";
 }
+
+
+
+async function getData(cat) {
+    const response = await fetch(`http://127.0.0.1:8000/getValue/${cat}`, {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit        
+    }).then((response) => response.json()).then((data) => data);
+
+    return response;
+
+}
+
+getData("love");
+
+// async function getData((cat, data) = {
+//     url:`http://127.0.0.1:8000/getValue/${cat}`,
+//     method: 'GET', // *GET, POST, PUT, DELETE, etc.
+//     mode: 'cors', // no-cors, *cors, same-origin
+//     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//     credentials: 'same-origin', // include, *same-origin, omit          
+//   }.then((data) => {
+//     console.log(data)
+//   }))

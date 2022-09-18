@@ -14,7 +14,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -54,12 +54,11 @@ async def setValue():
 
     return {"message": "Success"}
 
-@app.get("/getValue/{cat.category}")
-async def getValue(cat: Cat):
+@app.get("/getValue/{cat}")
+async def getValue(cat):
     table = Table()
-    table.getValue(cat.category)
     
-    return {"message": "Success"}
+    return table.getValue(cat)
 
 @app.get("/getValue")
 async def getValue():
